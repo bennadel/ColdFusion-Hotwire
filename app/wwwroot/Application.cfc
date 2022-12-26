@@ -24,7 +24,8 @@ component
 	this.appDirectory = ( this.wwwrootDirectory & "../" );
 	// Define the per-application custom mappings.
 	this.mappings = {
-		"/vendor": "#this.appDirectory#../vendor"
+		"/lib": "#this.appDirectory#lib",
+		"/vendor": "#this.appDirectory#vendor"
 	};
 
 	// Define the per-application database source names.
@@ -90,6 +91,8 @@ component
 		required any error,
 		required string eventType
 		) {
+
+		dump( error );
 
 		systemOutput( "An error occurred outside normal control flow.", true, true );
 		systemOutput( error, true, true );

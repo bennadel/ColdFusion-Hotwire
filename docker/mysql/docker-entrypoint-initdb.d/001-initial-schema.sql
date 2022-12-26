@@ -14,7 +14,7 @@ CREATE TABLE `tip` (
 	`notes` varchar(300) NOT NULL,
 	`createdAt` datetime NOT NULL,
 	`isCompleted` tinyint unsigned NOT NULL,
-	`completedAt` datetime NOT NULL,
+	`completedAt` datetime DEFAULT NULL,
 	PRIMARY KEY (`id`),
 	KEY `byTippee` (`tippeeID`),
 	KEY `byEvent` (`eventID`),
