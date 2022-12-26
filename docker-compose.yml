@@ -1,0 +1,62 @@
+version: "2.4"
+
+services:
+
+  # ColdFusion application and web server.
+  # 
+  # Server administrative URLs:
+  # - Server: http://localhost:8080/lucee/admin/server.cfm
+  # - Web: http://localhost:8080/lucee/admin/web.cfm
+  # 
+  # List of Lucee server variables:
+  # - https://docs.lucee.org/guides/Various/system-properties.html
+  # 
+  # List of CommandBox server variables:
+  # - https://hub.docker.com/r/ortussolutions/commandbox
+  lucee:
+    build:
+      context: "./docker/lucee/"
+      dockerfile: "Dockerfile"
+    ports:
+      - "80:8080"
+      - "8080:8080"
+    volumes:
+      - "./app:/app"
+    environment:
+      APP_DIR: "/app/wwwroot"
+      BOX_SERVER_APP_CFENGINE: "lucee@5.3.10+97"
+      BOX_SERVER_PROFILE: "development"
+      cfconfig_adminPassword: "password"
+      LUCEE_CASCADE_TO_RESULTSET: "false"
+      LUCEE_LISTENER_TYPE: "modern"
+      LUCEE_PRESERVE_CASE: "true"
+      MYSQL_SERVER: "mysql"
+      MYSQL_DATABASE: "sticky_tips"
+      MYSQL_PASSWORD: "password"
+      MYSQL_USERNAME: "root"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  # MySQL database server.
+  mysql:
+    build:
+      context: "./docker/mysql/"
+      dockerfile: "Dockerfile"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: "sticky_tips"
+      MYSQL_ROOT_PASSWORD: "password"
+    volumes:
+      # Initializing an empty database: When the MySQL server is started for the first
+      # time, the files in this directory will be executed by the database engine in
+      # alphabetical order.
+      - "./docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+      # Let Docker manage the storage of the database files internally.
+      - "mysql_data:/var/lib/mysql"
+    healthcheck:
+      test: "echo hello"
+
+volumes:
+  mysql_data:

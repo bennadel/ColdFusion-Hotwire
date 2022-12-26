@@ -1,0 +1,7 @@
+/.DS_Store
+/.parcel-cache
+/node_modules
+/notes.md
+/app/server-start.sh
+/app/wwwroot/css/*.*
+/app/wwwroot/server.json

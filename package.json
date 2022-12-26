@@ -1,0 +1,11 @@
+{
+	"name": "coldfusion-hotwire",
+	"version": "1.0.0",
+	"description": "Experimenting with ColdFusion (Lucee CFML) and Hotwire",
+	"scripts": {
+		"dc-down": "docker-compose down",
+		"dc-up": "docker-compose up"
+	},
+	"author": "Ben Nadel",
+	"license": "ISC"
+}
