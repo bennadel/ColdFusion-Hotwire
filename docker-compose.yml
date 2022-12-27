@@ -27,6 +27,7 @@ services:
       BOX_SERVER_APP_CFENGINE: "lucee@5.3.10+97"
       BOX_SERVER_PROFILE: "development"
       cfconfig_adminPassword: "password"
+      HEALTHCHECK_URI: "http://lucee:8080/healthcheck.cfm"
       LUCEE_CASCADE_TO_RESULTSET: "false"
       LUCEE_LISTENER_TYPE: "modern"
       LUCEE_PRESERVE_CASE: "true"
