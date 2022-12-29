@@ -195,6 +195,13 @@ component
 					})
 				);
 			break;
+			case "App.Routing.Root.InvalidEvent":
+				return(
+					as404({
+						type: error.type
+					})
+				)
+			break;
 			// Anything not handled by an explicit case becomes a generic 500 response.
 			default:
 				return( as500() );

@@ -24,6 +24,7 @@ component
 	this.appDirectory = ( this.wwwrootDirectory & "../" );
 	// Define the per-application custom mappings.
 	this.mappings = {
+		"/content": "#this.appDirectory#content",
 		"/lib": "#this.appDirectory#lib",
 		"/vendor": "#this.appDirectory#vendor"
 	};
@@ -63,7 +64,8 @@ component
 	*/
 	public void function onApplicationStart() {
 
-		// ...
+		var logService = application.logService = new lib.LogService();
+		var errorService = application.errorService = new lib.ErrorService();
 
 	}
 
@@ -72,6 +74,15 @@ component
 	* I run once to initialize the incoming request.
 	*/
 	public void function onRequestStart( required string scriptName ) {
+
+		// During development, it's often nice to be able to quickly re-initialize the
+		// application without the overhead of stopping / starting the application space.
+		if ( url.keyExists( "init" ) ) {
+
+			onApplicationStart();
+			url.delete( "init" );
+
+		}
 
 		request.context = structNew()
 			.append( url )
