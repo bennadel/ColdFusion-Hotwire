@@ -6,6 +6,7 @@ component
 
 	// Define properties for dependency-injection.
 	property gateway;
+	property utilities;
 	property validation;
 
 	// ---
@@ -25,7 +26,7 @@ component
 		occupation = validation.testOccupation( occupation );
 		notes = validation.testNotes( notes );
 
-		var createdAt = utcNow();
+		var createdAt = utilities.utcNow();
 
 		var id = gateway.createTippee(
 			name = name,
@@ -104,16 +105,6 @@ component
 	private struct function asDto( required query results ) {
 
 		return( results.rowData( results.currentRow ) );
-
-	}
-
-
-	/**
-	* I return the current UTC timestamp.
-	*/
-	private date function utcNow() {
-
-		return( dateConvert( "local2utc", now() ) );
 
 	}
 

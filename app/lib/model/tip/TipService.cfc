@@ -6,6 +6,7 @@ component
 
 	// Define properties for dependency-injection.
 	property gateway;
+	property utilities;
 	property validation;
 
 	// ---
@@ -27,7 +28,7 @@ component
 		amountInCents = validation.testAmountInCents( amountInCents );
 		notes = validation.testNotes( notes );
 
-		var createdAt = utcNow();
+		var createdAt = utilities.utcNow();
 
 		var id = gateway.createTip(
 			tippeeID = tippeeID,
@@ -87,7 +88,7 @@ component
 
 		}
 
-		var completedAt = utcNow();
+		var completedAt = utilities.utcNow();
 
 		gateway.updateTip(
 			id = tip.id,
@@ -139,7 +140,7 @@ component
 
 		// Moving into a completed state.
 		var completedAt = ( isCompleted && ! tip.isCompleted )
-			? utcNow()
+			? utilities.utcNow()
 			: gateway.NULL_DATE
 		;
 
@@ -173,16 +174,6 @@ component
 			isCompleted: !! results.isCompleted,
 			completedAt: results.completedAt
 		});
-
-	}
-
-
-	/**
-	* I return the current UTC timestamp.
-	*/
-	private date function utcNow() {
-
-		return( dateConvert( "local2utc", now() ) );
 
 	}
 
