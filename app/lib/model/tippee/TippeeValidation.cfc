@@ -14,7 +14,7 @@ component
 		if ( ! name.len() ) {
 
 			throw(
-				type = "App.Tippee.Name.Empty",
+				type = "App.Model.Tippee.Name.Empty",
 				message = "Tippee name is empty."
 			);
 
@@ -23,7 +23,7 @@ component
 		if ( name.len() > 50 ) {
 
 			throw(
-				type = "App.Tippee.Name.TooLong",
+				type = "App.Model.Tippee.Name.TooLong",
 				message = "Tippee name is too long."
 			);
 
@@ -32,7 +32,7 @@ component
 		if ( name != canonicalizeInput( name ) ) {
 
 			throw(
-				type = "App.Tippee.Name.SuspiciousEncoding",
+				type = "App.Model.Tippee.Name.SuspiciousEncoding",
 				message = "Tippee name contains suspicious encodings."
 			);
 
@@ -54,7 +54,7 @@ component
 		if ( notes.len() > 300 ) {
 
 			throw(
-				type = "App.Tippee.Notes.TooLong",
+				type = "App.Model.Tippee.Notes.TooLong",
 				message = "Tippee notes is too long."
 			);
 
@@ -73,19 +73,10 @@ component
 
 		occupation = occupation.trim();
 
-		if ( ! occupation.len() ) {
-
-			throw(
-				type = "App.Tippee.Occupation.Empty",
-				message = "Tippee occupation is empty."
-			);
-
-		}
-
 		if ( occupation.len() > 50 ) {
 
 			throw(
-				type = "App.Tippee.Occupation.TooLong",
+				type = "App.Model.Tippee.Occupation.TooLong",
 				message = "Tippee occupation is too long."
 			);
 
@@ -94,7 +85,7 @@ component
 		if ( occupation != canonicalizeInput( occupation ) ) {
 
 			throw(
-				type = "App.Tippee.Occupation.SuspiciousEncoding",
+				type = "App.Model.Tippee.Occupation.SuspiciousEncoding",
 				message = "Tippee occupation contains suspicious encodings."
 			);
 
@@ -111,7 +102,7 @@ component
 	public void function throwNotFoundError() {
 
 		throw(
-			type = "App.Tippee.NotFound",
+			type = "App.Model.Tippee.NotFound",
 			messge = "Tippee not found."
 		);
 

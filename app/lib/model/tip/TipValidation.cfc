@@ -14,7 +14,7 @@ component
 		if ( ! amountInCents ) {
 
 			throw(
-				type = "App.Tip.AmountInCents.Empty",
+				type = "App.Model.Tip.AmountInCents.Empty",
 				message = "AmountInCents is empty."
 			);
 
@@ -47,7 +47,7 @@ component
 		if ( notes.len() > 300 ) {
 
 			throw(
-				type = "App.Tip.Notes.TooLong",
+				type = "App.Model.Tip.Notes.TooLong",
 				message = "Tip notes is too long."
 			);
 
@@ -69,7 +69,7 @@ component
 		if ( ! tippeeID ) {
 
 			throw(
-				type = "App.Tip.TippeeID.Empty",
+				type = "App.Model.Tip.TippeeID.Empty",
 				message = "TippeeID is empty."
 			);
 
@@ -86,7 +86,7 @@ component
 	public void function throwNotFoundError() {
 
 		throw(
-			type = "App.Tip.NotFound",
+			type = "App.Model.Tip.NotFound",
 			messge = "Tip not found."
 		);
 

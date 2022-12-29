@@ -14,7 +14,7 @@ component
 		if ( ! name.len() ) {
 
 			throw(
-				type = "App.Event.Name.Empty",
+				type = "App.Model.Event.Name.Empty",
 				message = "Event name is empty."
 			);
 
@@ -23,7 +23,7 @@ component
 		if ( name.len() > 100 ) {
 
 			throw(
-				type = "App.Event.Name.TooLong",
+				type = "App.Model.Event.Name.TooLong",
 				message = "Event name is too long."
 			);
 
@@ -32,7 +32,7 @@ component
 		if ( name != canonicalizeInput( name ) ) {
 
 			throw(
-				type = "App.Event.Name.SuspiciousEncoding",
+				type = "App.Model.Event.Name.SuspiciousEncoding",
 				message = "Event name contains suspicious encodings."
 			);
 
@@ -60,7 +60,7 @@ component
 	public void function throwNotFoundError() {
 
 		throw(
-			type = "App.Event.NotFound",
+			type = "App.Model.Event.NotFound",
 			messge = "Event not found."
 		);
 
