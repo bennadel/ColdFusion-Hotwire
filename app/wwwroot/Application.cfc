@@ -71,6 +71,7 @@ component
 		var errorService = application.errorService = new lib.ErrorService();
 		var utilities = application.utilities = new lib.Utilities();
 
+		// Model services.
 		application.eventService = new lib.model.event.EventService()
 			.setGateway( new lib.model.event.EventGateway() )
 			.setValidation( new lib.model.event.EventValidation() )
@@ -84,6 +85,11 @@ component
 			.setGateway( new lib.model.tippee.TippeeGateway() )
 			.setUtilities( utilities )
 			.setValidation( new lib.model.tippee.TippeeValidation() )
+		;
+
+		// Partial services.
+		application.tippeeListPartial = new lib.partial.tippeeList.TippeeListPartial()
+			.setGateway( new lib.partial.tippeeList.TippeeListGateway() )
 		;
 
 		// TODO: More loading of all the things!
