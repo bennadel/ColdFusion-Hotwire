@@ -76,6 +76,18 @@ component
 
 
 	/**
+	* I get the tips for the given tippee.
+	*/
+	public array function getTipForTippee( required numeric tippeeID ) {
+
+		var results = gateway.getTipByFilter( tippeeID = tippeeID );
+
+		return( asDtoArray( results ) );
+
+	}
+
+
+	/**
 	* I mark the given tip as completed (if it is currently pending).
 	*/
 	public void function markAsCompleted( required numeric id ) {
@@ -174,6 +186,24 @@ component
 			isCompleted: !! results.isCompleted,
 			completedAt: results.completedAt
 		});
+
+	}
+
+
+	/**
+	* I return the tip rows as an array of simple data-transfer-objects.
+	*/
+	private array function asDtoArray( required query results ) {
+
+		var tips = [];
+
+		loop query = results {
+
+			tips.append( asDto( results ) );
+
+		}
+
+		return( tips );
 
 	}
 

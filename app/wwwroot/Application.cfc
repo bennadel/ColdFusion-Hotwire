@@ -99,6 +99,7 @@ component
 		// Workflow services.
 		application.tippeeWorkflow = new lib.workflow.TippeeWorkflow()
 			.setTippeeService( application.tippeeService )
+			.setTipService( application.tipService )
 		;
 
 	}

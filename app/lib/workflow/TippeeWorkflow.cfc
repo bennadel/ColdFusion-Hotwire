@@ -6,6 +6,7 @@ component
 
 	// Define properties for dependency-injection.
 	property tippeeService;
+	property tipService;
 
 	// ---
 	// PUBLIC METHODS.
@@ -29,6 +30,32 @@ component
 		return({
 			id: id
 		});
+
+	}
+
+
+	/**
+	* I delete the tippee with the given ID and return the result. This will also delete
+	* any tips associated with said tippee.
+	*/
+	public struct function deleteTippee( required numeric id ) {
+
+		var tippee = tippeeService.getTippee( id );
+
+		// Before we delete the tippee, we need to delete all of the tips associated with
+		// this tippee. This way, if something goes wrong mid-processing, this method can
+		// be idempotently (safely) called again.
+		for ( var tip in tipService.getTipForTippee( tippee.id ) ) {
+
+			tipService.deleteTip( tip.id );
+
+		}
+
+		tippeeService.deleteTippee( tippee.id );
+
+		return({
+			id: id
+		})
 
 	}
 

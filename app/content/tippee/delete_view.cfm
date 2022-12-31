@@ -6,13 +6,39 @@
 			#encodeForHtml( request.template.title )#
 		</h1>
 
-		<p>
-			TODO: Delete tippee...
-		</p>
+		<cfif errorMessage.len()>
+			<p>
+				<strong>#encodeForHtml( errorMessage )#</strong>
+			</p>
+		</cfif>
 
-		<p>
-			<a href="/index.cfm?event=tippee.view&id=101">Cancel</a>
-		</p>
+		<form method="post" action="/index.cfm">
+			<input type="hidden" name="event" value="tippee.delete" />
+			<input type="hidden" name="id" value="#encodeForHtmlAttribute( tippee.id )#" />
+			<input type="hidden" name="submitted" value="true" />
+
+			<p>
+				Deleting the tippee will delete both the tippee and all tips that have
+				been recorded for this tippee. Do you with to proceed?<br />
+
+				<label>
+					<input
+						type="checkbox"
+						name="isAgree"
+						value="true"
+					/>
+					I understand and I would like to proceed.
+				</label>
+			</p>
+
+			<p>
+				<button type="submit">
+					Delete Tippee
+				</button>
+
+				<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tippee.id )#">Cancel</a>
+			</p>
+		</form>
 
 	</cfoutput>
 </cfsavecontent>
