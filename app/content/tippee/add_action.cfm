@@ -5,6 +5,8 @@
 	param name="request.context.notes" type="string" default="";
 	param name="request.context.submitted" type="boolean" default=false;
 
+	request.template.title = "Add a new Tippee";
+
 	errorMessage = "";
 
 	if ( request.context.submitted ) {
@@ -30,7 +32,5 @@
 		}
 
 	}
-
-	request.template.title = "Add a new Tippee";
 
 </cfscript>

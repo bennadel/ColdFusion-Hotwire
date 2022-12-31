@@ -8,6 +8,8 @@
 
 	tippee = application.tippeeService.getTippee( val( request.context.id ) );
 
+	request.template.title = "Edit #tippee.name#";
+
 	errorMessage = "";
 
 	if ( request.context.submitted ) {
@@ -40,7 +42,5 @@
 		request.context.notes = tippee.notes;
 
 	}
-
-	request.template.title = "Edit #tippee.name#";
 
 </cfscript>
