@@ -63,7 +63,11 @@
 	// Catch any errors thrown during routing and rendering. Unhandled errors will
 	// override any existing template choices and cause the error template to render.
 	} catch ( any error ) {
-dump(error);abort;
+
+// TODO: Remove this.
+dump( error );
+abort;
+
 		application.logService.logException( error );
 
 		// Translate the unhandled error into a user-friendly error response.
