@@ -215,6 +215,17 @@ component
 
 	}
 
+
+	/**
+	* I return the error MESSAGE for the given error object. This message is safe to show
+	* to the user.
+	*/
+	public string function getResponseMessage( required any error ) {
+
+		return( getResponse( error ).message );
+
+	}
+
 	// ---
 	// PRIVATE METHODS.
 	// ---

@@ -84,6 +84,14 @@ component
 		any data = {}
 		) {
 
+		// If the error starts with "App.", then it is a domain error that is happening as
+		// part of normal processing. We don't need to log these (they are just noise).
+		if ( error.type.find( "App." ) == 1 ) {
+
+			return;
+
+		}
+
 		switch ( error.type ) {
 			// The following errors are high-volume and don't represent much value.
 			case "Nope":

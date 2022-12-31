@@ -67,9 +67,9 @@ component
 		// We want to declare the Error and Log services as early as possible so that we
 		// might be able to use it in the onError() handler should something go wrong
 		// while initializing the application.
-		var logService = application.logService = new lib.LogService();
-		var errorService = application.errorService = new lib.ErrorService();
-		var utilities = application.utilities = new lib.Utilities();
+		application.logService = new lib.LogService();
+		application.errorService = new lib.ErrorService();
+		application.utilities = new lib.Utilities();
 
 		// Model services.
 		application.eventService = new lib.model.event.EventService()
@@ -78,12 +78,12 @@ component
 		;
 		application.tipService = new lib.model.tip.TipService()
 			.setGateway( new lib.model.tip.TipGateway() )
-			.setUtilities( utilities )
+			.setUtilities( application.utilities )
 			.setValidation( new lib.model.tip.TipValidation() )
 		;
 		application.tippeeService = new lib.model.tippee.TippeeService()
 			.setGateway( new lib.model.tippee.TippeeGateway() )
-			.setUtilities( utilities )
+			.setUtilities( application.utilities )
 			.setValidation( new lib.model.tippee.TippeeValidation() )
 		;
 
@@ -96,7 +96,10 @@ component
 			.setGateway( new lib.partial.tippeeList.TippeeListGateway() )
 		;
 
-		// TODO: More loading of all the things!
+		// Workflow services.
+		application.tippeeWorkflow = new lib.workflow.TippeeWorkflow()
+			.setTippeeService( application.tippeeService )
+		;
 
 	}
 
