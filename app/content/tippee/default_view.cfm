@@ -64,6 +64,8 @@
 						</td>
 						<td>
 							<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tippee.id )#">View</a>
+							&mdash;
+							<a href="/index.cfm?event=tippee.edit&id=#encodeForUrl( tippee.id )#">Edit</a>
 						</td>
 					</tr>
 				</cfloop>
