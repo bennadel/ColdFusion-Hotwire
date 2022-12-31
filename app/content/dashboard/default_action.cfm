@@ -1,5 +1,5 @@
 <cfscript>
 
-	request.template.title = "Hello, World";
+	request.template.title = "Tip Dashboard";
 
 </cfscript>

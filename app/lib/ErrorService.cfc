@@ -195,7 +195,12 @@ component
 					})
 				);
 			break;
+			case "App.Routing.Dashboard.InvalidEvent":
+			case "App.Routing.Event.InvalidEvent":
+			case "App.Routing.Faq.InvalidEvent":
 			case "App.Routing.Root.InvalidEvent":
+			case "App.Routing.Tip.InvalidEvent":
+			case "App.Routing.Tippee.InvalidEvent":
 				return(
 					as404({
 						type: error.type

@@ -7,7 +7,11 @@
 		</h1>
 
 		<p>
-			You're so close! Only a few more tips to go!
+			TODO: Add tippee...
+		</p>
+
+		<p>
+			<a href="/index.cfm?event=tippee">Cancel</a>
 		</p>
 
 	</cfoutput>

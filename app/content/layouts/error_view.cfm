@@ -21,6 +21,10 @@
 			#encodeForHtml( request.template.message )#
 		</p>
 
+		<p>
+			In the meantime, you can <a href="/index.cfm?event=dashboard">return to your dashboard</a> &rarr;
+		</p>
+
 	</body>
 	</html>
 

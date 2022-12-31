@@ -7,7 +7,11 @@
 		</h1>
 
 		<p>
-			You're so close! Only a few more tips to go!
+			TODO: Add event....
+		</p>
+
+		<p>
+			<a href="/index.cfm?event">Cancel</a>
 		</p>
 
 	</cfoutput>

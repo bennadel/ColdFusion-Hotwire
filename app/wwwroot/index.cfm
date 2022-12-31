@@ -24,6 +24,18 @@
 			case "dashboard":
 				include "/content/dashboard/index.cfm";
 			break;
+			case "event":
+				include "/content/event/index.cfm";
+			break;
+			case "faq":
+				include "/content/faq/index.cfm";
+			break;
+			case "tip":
+				include "/content/tip/index.cfm";
+			break;
+			case "tippee":
+				include "/content/tippee/index.cfm";
+			break;
 			default:
 				throw(
 					type = "App.Routing.Root.InvalidEvent",
