@@ -88,6 +88,9 @@ component
 		;
 
 		// Partial services.
+		application.eventListPartial = new lib.partial.eventList.EventListPartial()
+			.setGateway( new lib.partial.eventList.EventListGateway() )
+		;
 		application.tippeeDetailPartial = new lib.partial.tippeeDetail.TippeeDetailPartial()
 			.setGateway( new lib.partial.tippeeDetail.TippeeDetailGateway() )
 			.setTippeeService( application.tippeeService )
