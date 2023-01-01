@@ -6,7 +6,7 @@
 
 	tippee = application.tippeeService.getTippee( val( request.context.id ) );
 
-	request.template.title = "Edit #tippee.name#";
+	request.template.title = "Delete #tippee.name#";
 
 	errorMessage = "";
 

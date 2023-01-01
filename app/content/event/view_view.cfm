@@ -2,6 +2,17 @@
 <cfsavecontent variable="request.template.body">
 	<cfoutput>
 
+		<cfif request.context.showAddSuccess>
+			<p>
+				<strong>Woot!</strong> Your new event has been created!
+			</p>
+		</cfif>
+		<cfif request.context.showEditSuccess>
+			<p>
+				<strong>Woot!</strong> Your event has been updated!
+			</p>
+		</cfif>
+
 		<h1>
 			#encodeForHtml( request.template.title )#
 		</h1>
