@@ -70,6 +70,7 @@ component
 		application.logService = new lib.LogService();
 		application.errorService = new lib.ErrorService();
 		application.utilities = new lib.Utilities();
+		application.viewUtilities = new lib.ViewUtilities();
 
 		// Model services.
 		application.eventService = new lib.model.event.EventService()

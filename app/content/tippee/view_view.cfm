@@ -81,7 +81,7 @@
 							#encodeForHtml( tip.event.name )#
 						</td>
 						<td>
-							#dollarFormat( tip.amountInCents / 100 )#
+							#view.tipFormat( tip.amountInCents )#
 						</td>
 						<td>
 							#encodeForHtml( tip.notes )#

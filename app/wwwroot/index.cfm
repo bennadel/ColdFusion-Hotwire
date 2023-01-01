@@ -1,5 +1,12 @@
 <cfscript>
 
+	// Since our template rendering is all being executed through includes, every template
+	// essentially shares the same page context. As such, we can set this "view" component
+	// reference in order to make view-helper methods available within the request. And,
+	// if another page context (such as a custom tag) needs these helpers, they can be
+	// grabbed out of either the REUQEST or APPLICATION scopes.
+	view = request.view = application.viewUtilities;
+
 	request.template = {
 		statusCode: 200,
 		statusText: "OK",

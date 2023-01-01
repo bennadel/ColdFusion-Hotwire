@@ -54,12 +54,12 @@
 						</td>
 						<td>
 							<cfif tippee.pendingTipTotal>
-								#dollarFormat( tippee.pendingTipTotal / 100 )#
+								#view.tipFormat( tippee.pendingTipTotal )#
 							</cfif>
 						</td>
 						<td>
 							<cfif tippee.tipTotal>
-								#dollarFormat( tippee.tipTotal / 100 )#
+								#view.tipFormat( tippee.tipTotal )#
 							</cfif>
 						</td>
 						<td>

@@ -48,12 +48,12 @@
 						</td>
 						<td>
 							<cfif event.tips.pendingTotal>
-								#dollarFormat( event.tips.pendingTotal / 100 )#
+								#view.tipFormat( event.tips.pendingTotal )#
 							</cfif>
 						</td>
 						<td>
 							<cfif event.tips.total>
-								#dollarFormat( event.tips.total / 100 )#
+								#view.tipFormat( event.tips.total )#
 							</cfif>
 						</td>
 						<td>
