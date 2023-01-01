@@ -11,7 +11,7 @@
 		</p>
 
 		<p>
-			<a href="/index.cfm?event">Cancel</a>
+			<a href="/index.cfm?event=event">Cancel</a>
 		</p>
 
 	</cfoutput>

@@ -89,6 +89,10 @@ component
 		;
 
 		// Partial services.
+		application.eventDetailPartial = new lib.partial.eventDetail.EventDetailPartial()
+			.setGateway( new lib.partial.eventDetail.EventDetailGateway() )
+			.setEventService( application.eventService )
+		;
 		application.eventListPartial = new lib.partial.eventList.EventListPartial()
 			.setGateway( new lib.partial.eventList.EventListGateway() )
 		;

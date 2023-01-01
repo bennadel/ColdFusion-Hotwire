@@ -78,7 +78,7 @@
 				<cfloop item="tip" array="#tips#">
 					<tr>
 						<td>
-							#encodeForHtml( tip.event.name )#
+							<a href="/index.cfm?event=event.view&id=#encodeForUrl( tip.event.id )#">#encodeForHtml( tip.event.name )#</a>
 						</td>
 						<td>
 							#view.tipFormat( tip.amountInCents )#

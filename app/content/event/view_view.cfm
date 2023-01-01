@@ -6,19 +6,93 @@
 			#encodeForHtml( request.template.title )#
 		</h1>
 
-		<p>
-			TODO: Event detail...
-		</p>
+		<dl>
+			<div>
+				<dt> Name: </dt>
+				<dd> #encodeForHtml( event.name )# </dd>
+			</div>
+			<div>
+				<dt> Occurred: </dt>
+				<dd> #dateFormat( event.occurredAt, "mmmm d, yyyy" )# </dd>
+			</div>
+		</dl>
 
 		<p>
 			<a href="/index.cfm?event=event">Back to list</a>
 		</p>
 
 		<p>
-			<a href="/index.cfm?event=event.edit&id=101">Edit</a> &mdash;
-			<a href="/index.cfm?event=event.duplicate&id=101">Duplicate</a> &mdash;
-			<a href="/index.cfm?event=event.delete&id=101">Delete</a>
+			<a href="/index.cfm?event=event.edit&id=#encodeForUrl( event.id )#">Edit</a> &mdash;
+			<a href="/index.cfm?event=event.duplicate&id=#encodeForUrl( event.id )#">Duplicate</a> &mdash;
+			<a href="/index.cfm?event=event.delete&id=#encodeForUrl( event.id )#">Delete</a>
 		</p>
+
+		<!--- BEGIN: Tips. --->
+		<cfif tips.len()>
+
+			<h2>
+				Tips
+			</h2>
+
+			<table width="100%" border="1">
+			<thead>
+				<tr>
+					<th>
+						Tippee
+					</th>
+					<th>
+						Amount
+					</th>
+					<th>
+						Notes
+					</th>
+					<th>
+						Created
+					</th>
+					<th>
+						Completed
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<cfloop item="tip" array="#tips#">
+					<tr>
+						<td>
+							<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tip.tippee.id )#">#encodeForHtml( tip.tippee.name )#</a>
+						</td>
+						<td>
+							#view.tipFormat( tip.amountInCents )#
+						</td>
+						<td>
+							#encodeForHtml( tip.notes )#
+						</td>
+						<td>
+							#dateFormat( tip.createdAt, "mmmm d, yyyy" )#
+						</td>
+						<td>
+							<cfif tip.isCompleted>
+								#dateFormat( tip.completedAt, "mmmm d, yyyy" )#
+							</cfif>
+						</td>
+					</tr>
+				</cfloop>
+			</tbody>
+			</table>
+
+		</cfif>
+		<!--- END: Tips. --->
+
+
+		<!--- BEGIN: No Tips. --->
+		<cfif ! tips.len()>
+
+			<p>
+				You have not assigned any tips to #encodeForHtml( event.name )# yet.
+				<!--- TODO: Add a link to the tip creation form. --->
+			</p>
+
+		</cfif>
+		<!--- END: No Tips. --->
 
 	</cfoutput>
 </cfsavecontent>
