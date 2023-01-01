@@ -55,7 +55,7 @@ component
 
 		return({
 			id: id
-		})
+		});
 
 	}
 

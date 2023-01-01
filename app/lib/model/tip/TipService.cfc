@@ -76,6 +76,18 @@ component
 
 
 	/**
+	* I get the tips for the given event.
+	*/
+	public array function getTipForEvent( required numeric eventID ) {
+
+		var results = gateway.getTipByFilter( eventID = eventID );
+
+		return( asDtoArray( results ) );
+
+	}
+
+
+	/**
 	* I get the tips for the given tippee.
 	*/
 	public array function getTipForTippee( required numeric tippeeID ) {
@@ -128,6 +140,27 @@ component
 			id = tip.id,
 			isCompleted = false,
 			completedAt = gateway.NULL_DATE
+		);
+
+	}
+
+
+	/**
+	* I remove the event association from the given tip.
+	*/
+	public void function removeEvent( required numeric id ) {
+
+		var tip = getTip( id );
+
+		if ( ! tip.eventID ) {
+
+			return;
+
+		}
+
+		gateway.updateTip(
+			id = tip.id,
+			eventID = 0
 		);
 
 	}
