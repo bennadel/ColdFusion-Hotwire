@@ -87,6 +87,46 @@ component
 
 
 	/**
+	* I duplicate the event with the given ID and returns the result. All of the tips
+	* associated with the given event are atomically added to the new event.
+	*/
+	public struct function duplicateEvent(
+		required numeric id,
+		required string name,
+		required string occurredAt
+		) {
+
+		var event = eventService.getEvent( id );
+		var tips = tipService.getTipForEvent( event.id );
+
+		transaction {
+
+			var duplicateID = eventService.createEvent(
+				name = name,
+				occurredAt = occurredAt
+			);
+
+			for ( var tip in tips ) {
+
+				tipService.createTip(
+					tippeeID = tip.tippeeID,
+					eventID = duplicateID,
+					amountInCents = tip.amountInCents,
+					notes = tip.notes
+				);
+
+			}
+
+		}
+
+		return({
+			id: duplicateID
+		});
+
+	}
+
+
+	/**
 	* I update the event with the given ID and return the result.
 	*/
 	public struct function updateEvent(
