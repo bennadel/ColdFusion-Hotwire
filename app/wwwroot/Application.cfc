@@ -105,6 +105,9 @@ component
 		;
 
 		// Workflow services.
+		application.eventWorkflow = new lib.workflow.EventWorkflow()
+			.setEventService( application.eventService )
+		;
 		application.tippeeWorkflow = new lib.workflow.TippeeWorkflow()
 			.setTippeeService( application.tippeeService )
 			.setTipService( application.tipService )
