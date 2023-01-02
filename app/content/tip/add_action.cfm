@@ -6,7 +6,7 @@
 	param name="request.context.eventID" type="numeric" default=0;
 	param name="request.context.eventName" type="string" default="";
 	param name="request.context.eventOccurredAt" type="string" default="";
-	param name="request.context.amountInDollars" type="numeric" default=50;
+	param name="request.context.amountInDollars" type="string" default="50";
 	param name="request.context.notes" type="string" default="";
 	param name="request.context.submitted" type="boolean" default=false;
 
@@ -15,6 +15,13 @@
 	errorMessage = "";
 
 	if ( request.context.submitted ) {
+
+		// TODO: / CAUTION: Since the following on-the-fly create actions are being done
+		// as part of the form submission, if the form has be submitted twice (such as for
+		// invalid data), the create actions fire AGAIN, causing the same entities to be
+		// created twice in a row. I'm not sure the best way to overcome this without
+		// JavaScript. Probably I can check to see if the most recently-created entity
+		// already exists and then ignore it? Not sure.
 
 		// We're creating a NEW TIPPEE as part of the form submission.
 		if ( ! request.context.tippeeID && request.context.tippeeName.len() ) {
@@ -79,7 +86,7 @@
 			result = application.tipWorkflow.createTip(
 				tippeeID = val( request.context.tippeeID ),
 				eventID = val( request.context.eventID ),
-				amountInCents = val( request.context.amountInDollars * 100 ),
+				amountInCents = ( val( request.context.amountInDollars ) * 100 ),
 				notes = request.context.notes
 			);
 
@@ -95,8 +102,10 @@
 
 		}
 
-	}
+	} // END: Submitted.
 
-	// TODO: Select from existing Tippee and Event records (partial).
+	partial = application.tipAddPartial.getPartial();
+	tippees = partial.tippees;
+	events = partial.events;
 
 </cfscript>

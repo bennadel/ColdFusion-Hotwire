@@ -20,10 +20,21 @@
 				Existing Tippee:<br />
 				<select name="tippeeID">
 					<option value="0">&mdash;</option>
+
+					<cfloop item="tippee" array="#tippees#">
+						<option
+							value="#encodeForHtmlAttribute( tippee.id )#"
+							#view.encodeBooleanAttribute( "selected", ( tippee.id == request.context.tippeeID ) )#>
+							#encodeForHtml( tippee.name )#
+							<cfif tippee.occupation.len()>
+								- #encodeForHtml( tippee.occupation )#
+							</cfif>
+						</option>
+					</cfloop>
 				</select>
 			</p>
 
-			<p>
+			<p style="margin-left: 30px ;">
 				Or, create a new Tippee:<br />
 				<input
 					type="text"
@@ -38,7 +49,7 @@
 					name="tippeeOccupation"
 					value="#encodeForHtmlAttribute( request.context.tippeeOccupation )#"
 					placeholder="Occupation (optional)..."
-					size="50"
+					size="20"
 					maxlength="50"
 				/>
 			</p>
@@ -47,10 +58,19 @@
 				Existing Event:<br />
 				<select name="eventID">
 					<option value="0">&mdash;</option>
+
+					<cfloop item="event" array="#events#">
+						<option
+							value="#encodeForHtmlAttribute( event.id )#"
+							#view.encodeBooleanAttribute( "selected", ( event.id == request.context.eventID ) )#>
+							#encodeForHtml( event.name )# -
+							#dateFormat( event.occurredAt, "mmmm d, yyyy" )#
+						</option>
+					</cfloop>
 				</select>
 			</p>
 
-			<p>
+			<p style="margin-left: 30px ;">
 				Or, create a new Event:<br />
 				<input
 					type="text"
@@ -76,7 +96,7 @@
 					type="text"
 					name="amountInDollars"
 					value="#encodeForHtmlAttribute( request.context.amountInDollars )#"
-					placeholder="100"
+					placeholder="100..."
 					size="10"
 					maxlength="5"
 				/>

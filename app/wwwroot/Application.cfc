@@ -96,6 +96,9 @@ component
 		application.eventListPartial = new lib.partial.eventList.EventListPartial()
 			.setGateway( new lib.partial.eventList.EventListGateway() )
 		;
+		application.tipAddPartial = new lib.partial.tipAdd.TipAddPartial()
+			.setGateway( new lib.partial.tipAdd.TipAddGateway() )
+		;
 		application.tipListPartial = new lib.partial.tipList.TipListPartial()
 			.setGateway( new lib.partial.tipList.TipListGateway() )
 		;
