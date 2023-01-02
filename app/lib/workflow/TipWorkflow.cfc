@@ -12,6 +12,30 @@ component
 	// ---
 
 	/**
+	* I create a new tip and return the result.
+	*/
+	public struct function createTip(
+		required numeric tippeeID,
+		required numeric eventID,
+		required numeric amountInCents,
+		required string notes
+		) {
+
+		var id = tipService.createTip(
+			tippeeID: tippeeID,
+			eventID: eventID,
+			amountInCents: amountInCents,
+			notes: notes
+		);
+
+		return({
+			id: id
+		});
+
+	}
+
+
+	/**
 	* I mark the given tip as complete and return the result.
 	*/
 	public struct function markAsCompleted( required numeric id ) {

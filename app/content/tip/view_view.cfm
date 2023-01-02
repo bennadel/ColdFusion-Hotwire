@@ -2,6 +2,12 @@
 <cfsavecontent variable="request.template.body">
 	<cfoutput>
 
+		<cfif request.context.showAddSuccess>
+			<p>
+				<strong>Woot!</strong> Your new tip has been created!
+			</p>
+		</cfif>
+
 		<h1>
 			#encodeForHtml( request.template.title )#
 		</h1>
