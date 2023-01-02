@@ -96,6 +96,9 @@ component
 		application.eventListPartial = new lib.partial.eventList.EventListPartial()
 			.setGateway( new lib.partial.eventList.EventListGateway() )
 		;
+		application.tipListPartial = new lib.partial.tipList.TipListPartial()
+			.setGateway( new lib.partial.tipList.TipListGateway() )
+		;
 		application.tippeeDetailPartial = new lib.partial.tippeeDetail.TippeeDetailPartial()
 			.setGateway( new lib.partial.tippeeDetail.TippeeDetailGateway() )
 			.setTippeeService( application.tippeeService )
@@ -111,6 +114,9 @@ component
 		;
 		application.tippeeWorkflow = new lib.workflow.TippeeWorkflow()
 			.setTippeeService( application.tippeeService )
+			.setTipService( application.tipService )
+		;
+		application.tipWorkflow = new lib.workflow.TipWorkflow()
 			.setTipService( application.tipService )
 		;
 

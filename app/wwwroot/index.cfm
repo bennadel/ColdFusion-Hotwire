@@ -71,6 +71,9 @@
 	// override any existing template choices and cause the error template to render.
 	} catch ( any error ) {
 
+		// Uncomment for local debugging only.
+		// dump( error ); abort;
+
 		application.logService.logException( error );
 
 		// Translate the unhandled error into a user-friendly error response.
