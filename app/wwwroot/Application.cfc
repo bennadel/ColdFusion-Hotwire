@@ -99,6 +99,11 @@ component
 		application.tipAddPartial = new lib.partial.tipAdd.TipAddPartial()
 			.setGateway( new lib.partial.tipAdd.TipAddGateway() )
 		;
+		application.tipDetailPartial = new lib.partial.tipDetail.TipDetailPartial()
+			.setEventService( application.eventService )
+			.setTippeeService( application.tippeeService )
+			.setTipService( application.tipService )
+		;
 		application.tipListPartial = new lib.partial.tipList.TipListPartial()
 			.setGateway( new lib.partial.tipList.TipListGateway() )
 		;

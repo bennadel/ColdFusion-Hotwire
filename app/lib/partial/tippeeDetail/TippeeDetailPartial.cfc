@@ -13,7 +13,7 @@ component
 	// ---
 
 	/**
-	* I return the partial for the tippee list.
+	* I return the partial for the tippee detail.
 	*/
 	public struct function getPartial( required numeric tippeeID ) {
 
