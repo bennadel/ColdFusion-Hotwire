@@ -2,6 +2,12 @@
 <cfsavecontent variable="request.template.body">
 	<cfoutput>
 
+		<cfif request.context.showDeleteSuccess>
+			<p>
+				<strong>Woot!</strong> Your tip has been deleted.
+			</p>
+		</cfif>
+
 		<h1>
 			#encodeForHtml( request.template.title )#
 		</h1>

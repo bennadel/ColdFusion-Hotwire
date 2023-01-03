@@ -36,6 +36,20 @@ component
 
 
 	/**
+	* I delete the tip with the given ID and return the result.
+	*/
+	public struct function deleteTip( required numeric id ) {
+
+		tipService.deleteTip( id );
+
+		return({
+			id: id
+		});
+
+	}
+
+
+	/**
 	* I mark the given tip as complete and return the result.
 	*/
 	public struct function markAsCompleted( required numeric id ) {
