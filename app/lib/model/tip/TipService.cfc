@@ -174,8 +174,7 @@ component
 		required numeric tippeeID,
 		required numeric eventID,
 		required numeric amountInCents,
-		required string notes,
-		required boolean isCompleted
+		required string notes
 		) {
 
 		var tip = getTip( id );
@@ -185,20 +184,12 @@ component
 		amountInCents = validation.testAmountInCents( amountInCents );
 		notes = validation.testNotes( notes );
 
-		// Moving into a completed state.
-		var completedAt = ( isCompleted && ! tip.isCompleted )
-			? utilities.utcNow()
-			: gateway.NULL_DATE
-		;
-
 		gateway.updateTip(
 			id = tip.id,
 			tippeeID = tippeeID,
 			eventID = eventID,
 			amountInCents = amountInCents,
-			notes = notes,
-			isCompleted = isCompleted,
-			completedAt = completedAt
+			notes = notes
 		);
 
 	}

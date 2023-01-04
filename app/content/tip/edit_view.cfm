@@ -13,7 +13,7 @@
 		</cfif>
 
 		<form method="post" action="/index.cfm">
-			<input type="hidden" name="event" value="tip.add" />
+			<input type="hidden" name="event" value="tip.edit" />
 			<input type="hidden" name="id" value="#encodeForHtmlAttribute( tip.id )#" />
 			<input type="hidden" name="submitted" value="true" />
 

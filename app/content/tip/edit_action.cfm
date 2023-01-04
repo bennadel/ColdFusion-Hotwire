@@ -88,6 +88,7 @@
 		try {
 
 			result = application.tipWorkflow.updateTip(
+				id = tip.id,
 				tippeeID = val( request.context.tippeeID ),
 				eventID = val( request.context.eventID ),
 				amountInCents = ( val( request.context.amountInDollars ) * 100 ),

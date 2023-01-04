@@ -7,6 +7,11 @@
 				<strong>Woot!</strong> Your new tip has been created!
 			</p>
 		</cfif>
+		<cfif request.context.showEditSuccess>
+			<p>
+				<strong>Woot!</strong> Your tip has been updated!
+			</p>
+		</cfif>
 
 		<h1>
 			#encodeForHtml( request.template.title )#

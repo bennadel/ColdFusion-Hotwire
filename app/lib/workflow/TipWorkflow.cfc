@@ -76,4 +76,30 @@ component
 
 	}
 
+
+	/**
+	* I update the tip and return the result.
+	*/
+	public struct function updateTip(
+		required numeric id,
+		required numeric tippeeID,
+		required numeric eventID,
+		required numeric amountInCents,
+		required string notes
+		) {
+
+		tipService.updateTip(
+			id: id,
+			tippeeID: tippeeID,
+			eventID: eventID,
+			amountInCents: amountInCents,
+			notes: notes
+		);
+
+		return({
+			id: id
+		});
+
+	}
+
 }
