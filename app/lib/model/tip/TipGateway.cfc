@@ -170,6 +170,7 @@ component
 	*/
 	public void function updateTip(
 		required numeric id,
+		numeric tippeeID,
 		numeric eventID,
 		numeric amountInCents,
 		string notes,
@@ -183,6 +184,10 @@ component
 			UPDATE
 				tip t
 			SET
+				<cfif arguments.keyExists( "tippeeID" )>
+					t.tippeeID = <cfqueryparam value="#tippeeID#" sqltype="bigint" />,
+				</cfif>
+
 				<cfif arguments.keyExists( "eventID" )>
 					t.eventID = <cfqueryparam value="#eventID#" sqltype="bigint" />,
 				</cfif>

@@ -171,6 +171,7 @@ component
 	*/
 	public void function updateTip(
 		required numeric id,
+		required numeric tippeeID,
 		required numeric eventID,
 		required numeric amountInCents,
 		required string notes,
@@ -179,6 +180,7 @@ component
 
 		var tip = getTip( id );
 
+		tippeeID = validation.testTippeeID( tippeeID );
 		eventID = validation.testEventID( eventID );
 		amountInCents = validation.testAmountInCents( amountInCents );
 		notes = validation.testNotes( notes );
@@ -191,6 +193,7 @@ component
 
 		gateway.updateTip(
 			id = tip.id,
+			tippeeID = tippeeID,
 			eventID = eventID,
 			amountInCents = amountInCents,
 			notes = notes,
