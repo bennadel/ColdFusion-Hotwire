@@ -61,32 +61,7 @@
 						</td>
 						<td>
 							<cfif tip.isCompleted>
-
-								<!--- Quick action for clearing a completed tip. --->
-								<form method="post" action="/index.cfm">
-									<input type="hidden" name="event" value="tip" />
-									<input type="hidden" name="id" value="#encodeForHtmlAttribute( tip.id )#" />
-
-									#dateFormat( tip.completedAt, "mmmm d, yyyy" )#
-									&mdash;
-
-									<button type="submit" name="markAsNotCompleted" value="true">
-										Clear
-									</button>
-								</form>
-
-							<cfelse>
-
-								<!--- Quick action for marking a tip as completed. --->
-								<form method="post" action="/index.cfm">
-									<input type="hidden" name="event" value="tip" />
-									<input type="hidden" name="id" value="#encodeForHtmlAttribute( tip.id )#" />
-
-									<button type="submit" name="markAsCompleted" value="true">
-										Mark as Complete
-									</button>
-								</form>
-
+								#dateFormat( tip.completedAt, "mmmm d, yyyy" )#
 							</cfif>
 						</td>
 						<td>
