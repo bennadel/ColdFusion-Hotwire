@@ -4,8 +4,14 @@
 	"description": "Experimenting with ColdFusion (Lucee CFML) and Hotwire",
 	"scripts": {
 		"dc-down": "docker-compose down",
-		"dc-up": "docker-compose up"
+		"dc-up": "docker-compose up",
+		"js-build": "parcel build ./app/src/js/main.js --dist-dir ./app/wwwroot/js/",
+		"js-watch": "parcel       ./app/src/js/main.js --dist-dir ./app/wwwroot/js/"
 	},
 	"author": "Ben Nadel",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"@hotwired/turbo": "^7.2.4",
+		"parcel": "^2.8.2"
+	}
 }
