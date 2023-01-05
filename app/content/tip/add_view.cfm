@@ -15,6 +15,7 @@
 		<form method="post" action="/index.cfm">
 			<input type="hidden" name="event" value="tip.add" />
 			<input type="hidden" name="submitted" value="true" />
+			<input type="hidden" name="cancelTo" value="#encodeForHtmlAttribute( request.context.cancelTo )#" />
 
 			<p>
 				Existing Tippee:<br />
@@ -117,7 +118,23 @@
 					Add Tip
 				</button>
 
-				<a href="/index.cfm?event=tip">Cancel</a>
+				<!---
+					For the Cancel action, we want to try to return the user back to the
+					linked detail page, if provided and still feasible.
+				--->
+				<cfif ( ( request.context.cancelTo == "event" ) && request.context.eventID )>
+
+					<a href="/index.cfm?event=event.view&id=#encodeForUrl( request.context.eventID )#">Cancel</a>
+
+				<cfelseif ( ( request.context.cancelTo == "tippee" ) && request.context.tippeeID )>
+
+					<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( request.context.tippeeID )#">Cancel</a>
+
+				<cfelse>
+
+					<a href="/index.cfm?event=tip">Cancel</a>
+
+				</cfif>
 			</p>
 		</form>
 

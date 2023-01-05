@@ -108,7 +108,8 @@
 
 			<p>
 				You have not given any tips to #encodeForHtml( tippee.name )# yet.
-				<!--- TODO: Add a link to the tip creation form. --->
+				<a href="/index.cfm?event=tip.add&tippeeID=#encodeForUrl( tippee.id )#&cancelTo=tippee">Add a tip</a>
+				for this tippee.
 			</p>
 
 		</cfif>

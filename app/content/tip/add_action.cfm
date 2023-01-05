@@ -9,6 +9,7 @@
 	param name="request.context.amountInDollars" type="string" default="50";
 	param name="request.context.notes" type="string" default="";
 	param name="request.context.submitted" type="boolean" default=false;
+	param name="request.context.cancelTo" type="string" default="";
 
 	request.template.title = "Add a new Tip";
 

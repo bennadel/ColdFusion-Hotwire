@@ -99,7 +99,8 @@
 
 			<p>
 				You have not assigned any tips to #encodeForHtml( event.name )# yet.
-				<!--- TODO: Add a link to the tip creation form. --->
+				<a href="/index.cfm?event=tip.add&eventID=#encodeForUrl( event.id )#&cancelTo=event">Add a tip</a>
+				for this event.
 			</p>
 
 		</cfif>
