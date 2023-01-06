@@ -10,6 +10,7 @@
 		<title>
 			#encodeForHtml( request.template.title )#
 		</title>
+		<script src="/js/main.js" defer></script>
 	</head>
 	<body>
 
@@ -20,19 +21,19 @@
 		<nav>
 			<ul>
 				<li>
-					<a data-turbo="true" href="/index.htm?event=dashboard">Dashboard</a>
+					<a href="/index.htm?event=dashboard">Dashboard</a>
 				</li>
 				<li>
-					<a data-turbo="true" href="/index.htm?event=tip">Tips</a>
+					<a href="/index.htm?event=tip">Tips</a>
 				</li>
 				<li>
-					<a data-turbo="true" href="/index.htm?event=tippee">Tippees</a>
+					<a href="/index.htm?event=tippee">Tippees</a>
 				</li>
 				<li>
-					<a data-turbo="true" href="/index.htm?event=event">Events</a>
+					<a href="/index.htm?event=event">Events</a>
 				</li>
 				<li>
-					<a data-turbo="true" href="/index.htm?event=faq">FAQ</a>
+					<a href="/index.htm?event=faq">FAQ</a>
 				</li>
 			</ul>
 		</nav>

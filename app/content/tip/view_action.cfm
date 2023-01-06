@@ -10,11 +10,25 @@
 
 		application.tipWorkflow.markAsCompleted( val( request.context.id ) );
 
+		// In order for Hotwire Turbo Drive to work, form submissions must redirect to
+		// another page (in this case, we're just going to refresh the page, essentially).
+		location(
+			url = "/index.htm?event=tip.view&id=#encodeForUrl( request.context.id )#",
+			addToken = false
+		);
+
 	}
 
 	if ( request.context.markAsNotCompleted ) {
 
 		application.tipWorkflow.markAsNotCompleted( val( request.context.id ) );
+
+		// In order for Hotwire Turbo Drive to work, form submissions must redirect to
+		// another page (in this case, we're just going to refresh the page, essentially).
+		location(
+			url = "/index.htm?event=tip.view&id=#encodeForUrl( request.context.id )#",
+			addToken = false
+		);
 
 	}
 
