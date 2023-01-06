@@ -39,12 +39,12 @@
 		</dl>
 
 		<p>
-			<a href="/index.cfm?event=tippee">Back to list</a>
+			<a href="/index.htm?event=tippee">Back to list</a>
 		</p>
 
 		<p>
-			<a href="/index.cfm?event=tippee.edit&id=#encodeForUrl( tippee.id )#">Edit</a> &mdash;
-			<a href="/index.cfm?event=tippee.delete&id=#encodeForUrl( tippee.id )#">Delete</a>
+			<a href="/index.htm?event=tippee.edit&id=#encodeForUrl( tippee.id )#">Edit</a> &mdash;
+			<a href="/index.htm?event=tippee.delete&id=#encodeForUrl( tippee.id )#">Delete</a>
 		</p>
 
 		<!--- BEGIN: Recent Tips. --->
@@ -78,7 +78,7 @@
 				<cfloop item="tip" array="#tips#">
 					<tr>
 						<td>
-							<a href="/index.cfm?event=event.view&id=#encodeForUrl( tip.event.id )#">#encodeForHtml( tip.event.name )#</a>
+							<a href="/index.htm?event=event.view&id=#encodeForUrl( tip.event.id )#">#encodeForHtml( tip.event.name )#</a>
 						</td>
 						<td>
 							#view.tipFormat( tip.amountInCents )#
@@ -108,7 +108,7 @@
 
 			<p>
 				You have not given any tips to #encodeForHtml( tippee.name )# yet.
-				<a href="/index.cfm?event=tip.add&tippeeID=#encodeForUrl( tippee.id )#&cancelTo=tippee">Add a tip</a>
+				<a href="/index.htm?event=tip.add&tippeeID=#encodeForUrl( tippee.id )#&cancelTo=tippee">Add a tip</a>
 				for this tippee.
 			</p>
 

@@ -20,19 +20,19 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="/index.cfm?event=dashboard">Dashboard</a>
+					<a data-turbo="true" href="/index.htm?event=dashboard">Dashboard</a>
 				</li>
 				<li>
-					<a href="/index.cfm?event=tip">Tips</a>
+					<a data-turbo="true" href="/index.htm?event=tip">Tips</a>
 				</li>
 				<li>
-					<a href="/index.cfm?event=tippee">Tippees</a>
+					<a data-turbo="true" href="/index.htm?event=tippee">Tippees</a>
 				</li>
 				<li>
-					<a href="/index.cfm?event=event">Events</a>
+					<a data-turbo="true" href="/index.htm?event=event">Events</a>
 				</li>
 				<li>
-					<a href="/index.cfm?event=faq">FAQ</a>
+					<a data-turbo="true" href="/index.htm?event=faq">FAQ</a>
 				</li>
 			</ul>
 		</nav>

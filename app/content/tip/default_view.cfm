@@ -21,7 +21,7 @@
 		<cfif tips.len()>
 
 			<p>
-				<a href="/index.cfm?event=tip.add">Add a Tip</a>
+				<a href="/index.htm?event=tip.add">Add a Tip</a>
 			</p>
 
 			<table width="100%" border="1">
@@ -51,10 +51,10 @@
 				<cfloop item="tip" array="#tips#">
 					<tr>
 						<td>
-							<a href="/index.cfm?event=tip.view&id=#encodeForUrl( tip.id )#">#dateFormat( tip.createdAt, "mmmm d, yyyy" )#</a>
+							<a href="/index.htm?event=tip.view&id=#encodeForUrl( tip.id )#">#dateFormat( tip.createdAt, "mmmm d, yyyy" )#</a>
 						</td>
 						<td>
-							<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tip.tippee.id )#">#encodeForHtml( tip.tippee.name )#</a>
+							<a href="/index.htm?event=tippee.view&id=#encodeForUrl( tip.tippee.id )#">#encodeForHtml( tip.tippee.name )#</a>
 						</td>
 						<td>
 							#view.tipFormat( tip.amountInCents )#
@@ -66,13 +66,13 @@
 						</td>
 						<td>
 							<cfif tip.event.id>
-								<a href="/index.cfm?event=event.view&id=#encodeForUrl( tip.event.id )#">#encodeForHtml( tip.event.name )#</a>
+								<a href="/index.htm?event=event.view&id=#encodeForUrl( tip.event.id )#">#encodeForHtml( tip.event.name )#</a>
 							</cfif>
 						</td>
 						<td>
-							<a href="/index.cfm?event=tip.view&id=#encodeForUrl( tip.id )#">View</a>
+							<a href="/index.htm?event=tip.view&id=#encodeForUrl( tip.id )#">View</a>
 							&mdash;
-							<a href="/index.cfm?event=tip.edit&id=#encodeForUrl( tip.id )#">Edit</a>
+							<a href="/index.htm?event=tip.edit&id=#encodeForUrl( tip.id )#">Edit</a>
 						</td>
 					</tr>
 				</cfloop>
@@ -87,7 +87,7 @@
 		<cfif ! tips.len()>
 
 			<p>
-				Want to show some appreciation? <a href="/index.cfm?event=tip.add">Add your first tip</a>.
+				Want to show some appreciation? <a href="/index.htm?event=tip.add">Add your first tip</a>.
 			</p>
 
 		</cfif>

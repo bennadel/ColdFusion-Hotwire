@@ -12,7 +12,7 @@
 			</p>
 		</cfif>
 
-		<form method="post" action="/index.cfm">
+		<form method="post" action="/index.htm">
 			<input type="hidden" name="event" value="tippee.add" />
 			<input type="hidden" name="submitted" value="true" />
 
@@ -53,7 +53,7 @@
 					Add Tippee
 				</button>
 
-				<a href="/index.cfm?event=tippee">Cancel</a>
+				<a href="/index.htm?event=tippee">Cancel</a>
 			</p>
 		</form>
 

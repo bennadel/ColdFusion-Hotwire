@@ -28,7 +28,7 @@
 			;
 
 			location(
-				url = "/index.cfm?event=event&showDeleteSuccess=true",
+				url = "/index.htm?event=event&showDeleteSuccess=true",
 				addToken = false
 			);
 

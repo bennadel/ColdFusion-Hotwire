@@ -22,7 +22,7 @@
 		</p>
 
 		<p>
-			In the meantime, you can <a href="/index.cfm?event=dashboard">return to your dashboard</a> &rarr;
+			In the meantime, you can <a href="/index.htm?event=dashboard">return to your dashboard</a> &rarr;
 		</p>
 
 	</body>

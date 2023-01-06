@@ -92,7 +92,7 @@
 			);
 
 			location(
-				url = "/index.cfm?event=tip.view&id=#encodeForUrl( result.id )#&showAddSuccess=true",
+				url = "/index.htm?event=tip.view&id=#encodeForUrl( result.id )#&showAddSuccess=true",
 				addToken = false
 			);
 

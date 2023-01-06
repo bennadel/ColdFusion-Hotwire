@@ -17,7 +17,7 @@
 			result = application.tipWorkflow.deleteTip( tip.id );
 
 			location(
-				url = "/index.cfm?event=tip&showDeleteSuccess=true",
+				url = "/index.htm?event=tip&showDeleteSuccess=true",
 				addToken = false
 			);
 

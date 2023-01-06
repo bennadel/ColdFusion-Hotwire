@@ -26,6 +26,7 @@ services:
       APP_DIR: "/app/wwwroot"
       BOX_SERVER_APP_CFENGINE: "lucee@5.3.10+97"
       BOX_SERVER_PROFILE: "development"
+      BOX_SERVER_WEB_REWRITES_ENABLE: "true"
       cfconfig_adminPassword: "password"
       HEALTHCHECK_URI: "http://lucee:8080/healthcheck.cfm"
       LUCEE_CASCADE_TO_RESULTSET: "false"

@@ -12,7 +12,7 @@
 			</p>
 		</cfif>
 
-		<form method="post" action="/index.cfm">
+		<form method="post" action="/index.htm">
 			<input type="hidden" name="event" value="tip.add" />
 			<input type="hidden" name="submitted" value="true" />
 			<input type="hidden" name="cancelTo" value="#encodeForHtmlAttribute( request.context.cancelTo )#" />
@@ -124,15 +124,15 @@
 				--->
 				<cfif ( ( request.context.cancelTo == "event" ) && request.context.eventID )>
 
-					<a href="/index.cfm?event=event.view&id=#encodeForUrl( request.context.eventID )#">Cancel</a>
+					<a href="/index.htm?event=event.view&id=#encodeForUrl( request.context.eventID )#">Cancel</a>
 
 				<cfelseif ( ( request.context.cancelTo == "tippee" ) && request.context.tippeeID )>
 
-					<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( request.context.tippeeID )#">Cancel</a>
+					<a href="/index.htm?event=tippee.view&id=#encodeForUrl( request.context.tippeeID )#">Cancel</a>
 
 				<cfelse>
 
-					<a href="/index.cfm?event=tip">Cancel</a>
+					<a href="/index.htm?event=tip">Cancel</a>
 
 				</cfif>
 			</p>

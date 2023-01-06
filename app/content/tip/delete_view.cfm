@@ -12,7 +12,7 @@
 			</p>
 		</cfif>
 
-		<form method="post" action="/index.cfm">
+		<form method="post" action="/index.htm">
 			<input type="hidden" name="event" value="tip.delete" />
 			<input type="hidden" name="id" value="#encodeForHtmlAttribute( tip.id )#" />
 			<input type="hidden" name="submitted" value="true" />
@@ -26,7 +26,7 @@
 					Delete Tip
 				</button>
 
-				<a href="/index.cfm?event=tip.view&id=#encodeForUrl( tip.id )#">Cancel</a>
+				<a href="/index.htm?event=tip.view&id=#encodeForUrl( tip.id )#">Cancel</a>
 			</p>
 		</form>
 

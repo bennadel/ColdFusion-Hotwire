@@ -53,7 +53,7 @@
 					<cfif tip.isCompleted>
 
 						<!--- Quick action for clearing a completed tip. --->
-						<form method="post" action="/index.cfm">
+						<form method="post" action="/index.htm">
 							<input type="hidden" name="event" value="tip.view" />
 							<input type="hidden" name="id" value="#encodeForHtmlAttribute( tip.id )#" />
 
@@ -68,7 +68,7 @@
 					<cfelse>
 
 						<!--- Quick action for marking a tip as completed. --->
-						<form method="post" action="/index.cfm">
+						<form method="post" action="/index.htm">
 							<input type="hidden" name="event" value="tip.view" />
 							<input type="hidden" name="id" value="#encodeForHtmlAttribute( tip.id )#" />
 
@@ -83,12 +83,12 @@
 		</dl>
 
 		<p>
-			<a href="/index.cfm?event=tip">Back to list</a>
+			<a href="/index.htm?event=tip">Back to list</a>
 		</p>
 
 		<p>
-			<a href="/index.cfm?event=tip.edit&id=#encodeForUrl( tip.id )#">Edit</a> &mdash;
-			<a href="/index.cfm?event=tip.delete&id=#encodeForUrl( tip.id )#">Delete</a>
+			<a href="/index.htm?event=tip.edit&id=#encodeForUrl( tip.id )#">Edit</a> &mdash;
+			<a href="/index.htm?event=tip.delete&id=#encodeForUrl( tip.id )#">Delete</a>
 		</p>
 
 	</cfoutput>

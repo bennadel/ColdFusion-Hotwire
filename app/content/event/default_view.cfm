@@ -20,7 +20,7 @@
 		<cfif events.len()>
 
 			<p>
-				<a href="/index.cfm?event=event.add">Add an Event</a>
+				<a href="/index.htm?event=event.add">Add an Event</a>
 			</p>
 
 			<table width="100%" border="1">
@@ -47,7 +47,7 @@
 				<cfloop item="event" array="#events#">
 					<tr>
 						<td>
-							<a href="/index.cfm?event=event.view&id=#encodeForUrl( event.id )#">#encodeForHtml( event.name )#</a>
+							<a href="/index.htm?event=event.view&id=#encodeForUrl( event.id )#">#encodeForHtml( event.name )#</a>
 						</td>
 						<td>
 							#dateFormat( event.occurredAt, "mmmm d, yyyy" )#
@@ -63,9 +63,9 @@
 							</cfif>
 						</td>
 						<td>
-							<a href="/index.cfm?event=event.view&id=#encodeForUrl( event.id )#">View</a>
+							<a href="/index.htm?event=event.view&id=#encodeForUrl( event.id )#">View</a>
 							&mdash;
-							<a href="/index.cfm?event=event.edit&id=#encodeForUrl( event.id )#">Edit</a>
+							<a href="/index.htm?event=event.edit&id=#encodeForUrl( event.id )#">Edit</a>
 						</td>
 					</tr>
 				</cfloop>
@@ -80,7 +80,7 @@
 		<cfif ! events.len()>
 
 			<p>
-				Have a tip-oriented event coming up? <a href="/index.cfm?event=event.add">Add your first event</a>.
+				Have a tip-oriented event coming up? <a href="/index.htm?event=event.add">Add your first event</a>.
 			</p>
 
 		</cfif>

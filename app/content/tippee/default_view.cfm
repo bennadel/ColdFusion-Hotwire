@@ -20,7 +20,7 @@
 		<cfif tippees.len()>
 
 			<p>
-				<a href="/index.cfm?event=tippee.add">Add a Tippee</a>
+				<a href="/index.htm?event=tippee.add">Add a Tippee</a>
 			</p>
 
 			<table width="100%" border="1">
@@ -47,7 +47,7 @@
 				<cfloop item="tippee" array="#tippees#">
 					<tr>
 						<td>
-							<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tippee.id )#">#encodeForHtml( tippee.name )#</a>
+							<a href="/index.htm?event=tippee.view&id=#encodeForUrl( tippee.id )#">#encodeForHtml( tippee.name )#</a>
 						</td>
 						<td>
 							#encodeForHtml( tippee.occupation )#
@@ -63,9 +63,9 @@
 							</cfif>
 						</td>
 						<td>
-							<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tippee.id )#">View</a>
+							<a href="/index.htm?event=tippee.view&id=#encodeForUrl( tippee.id )#">View</a>
 							&mdash;
-							<a href="/index.cfm?event=tippee.edit&id=#encodeForUrl( tippee.id )#">Edit</a>
+							<a href="/index.htm?event=tippee.edit&id=#encodeForUrl( tippee.id )#">Edit</a>
 						</td>
 					</tr>
 				</cfloop>
@@ -80,7 +80,7 @@
 		<cfif ! tippees.len()>
 
 			<p>
-				Let's get your <em>Give</em> on! <a href="/index.cfm?event=tippee.add">Add your first tippee</a>.
+				Let's get your <em>Give</em> on! <a href="/index.htm?event=tippee.add">Add your first tippee</a>.
 			</p>
 
 		</cfif>

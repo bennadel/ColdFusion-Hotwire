@@ -24,7 +24,7 @@
 			);
 
 			location(
-				url = "/index.cfm?event=tippee.view&id=#encodeForUrl( result.id )#&showEditSuccess=true",
+				url = "/index.htm?event=tippee.view&id=#encodeForUrl( result.id )#&showEditSuccess=true",
 				addToken = false
 			);
 

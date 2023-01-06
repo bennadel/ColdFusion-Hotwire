@@ -12,7 +12,7 @@
 			</p>
 		</cfif>
 
-		<form method="post" action="/index.cfm">
+		<form method="post" action="/index.htm">
 			<input type="hidden" name="event" value="event.edit" />
 			<input type="hidden" name="id" value="#encodeForHtmlAttribute( event.id )#" />
 			<input type="hidden" name="submitted" value="true" />
@@ -45,7 +45,7 @@
 					Update Event
 				</button>
 
-				<a href="/index.cfm?event=event.view&id=#encodeForUrl( event.id )#">Cancel</a>
+				<a href="/index.htm?event=event.view&id=#encodeForUrl( event.id )#">Cancel</a>
 			</p>
 		</form>
 

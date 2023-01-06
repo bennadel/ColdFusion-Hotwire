@@ -24,7 +24,7 @@
 			result = application.tippeeWorkflow.deleteTippee( tippee.id );
 
 			location(
-				url = "/index.cfm?event=tippee&showDeleteSuccess=true",
+				url = "/index.htm?event=tippee&showDeleteSuccess=true",
 				addToken = false
 			);
 

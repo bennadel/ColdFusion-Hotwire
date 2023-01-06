@@ -29,7 +29,7 @@
 			);
 
 			location(
-				url = "/index.cfm?event=event.view&id=#encodeForUrl( result.id )#&showEditSuccess=true",
+				url = "/index.htm?event=event.view&id=#encodeForUrl( result.id )#&showEditSuccess=true",
 				addToken = false
 			);
 

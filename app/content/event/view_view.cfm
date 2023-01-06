@@ -29,13 +29,13 @@
 		</dl>
 
 		<p>
-			<a href="/index.cfm?event=event">Back to list</a>
+			<a href="/index.htm?event=event">Back to list</a>
 		</p>
 
 		<p>
-			<a href="/index.cfm?event=event.edit&id=#encodeForUrl( event.id )#">Edit</a> &mdash;
-			<a href="/index.cfm?event=event.duplicate&id=#encodeForUrl( event.id )#">Duplicate</a> &mdash;
-			<a href="/index.cfm?event=event.delete&id=#encodeForUrl( event.id )#">Delete</a>
+			<a href="/index.htm?event=event.edit&id=#encodeForUrl( event.id )#">Edit</a> &mdash;
+			<a href="/index.htm?event=event.duplicate&id=#encodeForUrl( event.id )#">Duplicate</a> &mdash;
+			<a href="/index.htm?event=event.delete&id=#encodeForUrl( event.id )#">Delete</a>
 		</p>
 
 		<!--- BEGIN: Tips. --->
@@ -69,7 +69,7 @@
 				<cfloop item="tip" array="#tips#">
 					<tr>
 						<td>
-							<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tip.tippee.id )#">#encodeForHtml( tip.tippee.name )#</a>
+							<a href="/index.htm?event=tippee.view&id=#encodeForUrl( tip.tippee.id )#">#encodeForHtml( tip.tippee.name )#</a>
 						</td>
 						<td>
 							#view.tipFormat( tip.amountInCents )#
@@ -99,7 +99,7 @@
 
 			<p>
 				You have not assigned any tips to #encodeForHtml( event.name )# yet.
-				<a href="/index.cfm?event=tip.add&eventID=#encodeForUrl( event.id )#&cancelTo=event">Add a tip</a>
+				<a href="/index.htm?event=tip.add&eventID=#encodeForUrl( event.id )#&cancelTo=event">Add a tip</a>
 				for this event.
 			</p>
 

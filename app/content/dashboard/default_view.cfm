@@ -34,20 +34,20 @@
 				<cfloop item="tip" array="#tips#">
 					<tr>
 						<td>
-							<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tip.tippee.id )#">#encodeForHtml( tip.tippee.name )#</a>
+							<a href="/index.htm?event=tippee.view&id=#encodeForUrl( tip.tippee.id )#">#encodeForHtml( tip.tippee.name )#</a>
 						</td>
 						<td>
-							<a href="/index.cfm?event=tip.view&id=#encodeForUrl( tip.id )#">#view.tipFormat( tip.amountInCents )#</a>
+							<a href="/index.htm?event=tip.view&id=#encodeForUrl( tip.id )#">#view.tipFormat( tip.amountInCents )#</a>
 						</td>
 						<td>
 							<cfif tip.event.id>
-								<a href="/index.cfm?event=event.view&id=#encodeForUrl( tip.event.id )#">#encodeForHtml( tip.event.name )#</a>
+								<a href="/index.htm?event=event.view&id=#encodeForUrl( tip.event.id )#">#encodeForHtml( tip.event.name )#</a>
 							</cfif>
 						</td>
 						<td>
 
 							<!--- Quick action for marking a tip as completed. --->
-							<form method="post" action="/index.cfm">
+							<form method="post" action="/index.htm">
 								<input type="hidden" name="event" value="dashboard" />
 								<input type="hidden" name="id" value="#encodeForHtmlAttribute( tip.id )#" />
 
@@ -74,7 +74,7 @@
 			</p>
 
 			<p>
-				<a href="/index.cfm?event=tip.add">Add a new tip</a>
+				<a href="/index.htm?event=tip.add">Add a new tip</a>
 			</p>
 
 		</cfif>

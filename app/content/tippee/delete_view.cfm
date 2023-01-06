@@ -12,7 +12,7 @@
 			</p>
 		</cfif>
 
-		<form method="post" action="/index.cfm">
+		<form method="post" action="/index.htm">
 			<input type="hidden" name="event" value="tippee.delete" />
 			<input type="hidden" name="id" value="#encodeForHtmlAttribute( tippee.id )#" />
 			<input type="hidden" name="submitted" value="true" />
@@ -36,7 +36,7 @@
 					Delete Tippee
 				</button>
 
-				<a href="/index.cfm?event=tippee.view&id=#encodeForUrl( tippee.id )#">Cancel</a>
+				<a href="/index.htm?event=tippee.view&id=#encodeForUrl( tippee.id )#">Cancel</a>
 			</p>
 		</form>
 
