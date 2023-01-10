@@ -12,7 +12,7 @@
 		</p>
 
 		<cfif errorMessage.len()>
-			<p>
+			<p style="background: red ; color: white ;">
 				<strong>#encodeForHtml( errorMessage )#</strong>
 			</p>
 		</cfif>

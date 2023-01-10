@@ -17,6 +17,12 @@
 
 	if ( request.context.submitted ) {
 
+		// NOTE: In order for Turbo Drive to work with properly with FORM SUBMISSIONS, we
+		// must set an appropriate HTTP status code on the response. Turbo Drive expects a
+		// "Location" (redirect) header when a form is submitted successfully. As such, in
+		// order for our form to re-render on a failed submission, we must return a non-
+		// 200 status code.
+
 		// TODO: / CAUTION: Since the following on-the-fly create actions are being done
 		// as part of the form submission, if the form has be submitted twice (such as for
 		// invalid data), the create actions fire AGAIN, causing the same entities to be
@@ -38,7 +44,12 @@
 			} catch ( error ) {
 
 				application.logService.logException( error );
-				errorMessage = application.errorService.getResponseMessage( error );
+
+				errorResponse = application.errorService.getResponse( error );
+				request.template.statusCode = errorResponse.statusCode;
+				request.template.statusText = errorResponse.statusText;
+
+				errorMessage = errorResponse.message;
 				exit;
 
 			}
@@ -54,7 +65,13 @@
 
 			if ( ! isDate( request.context.eventOccurredAt ) ) {
 
-				errorMessage = "Please provide a valid date for your event.";
+				errorResponse = application.errorService.as422({
+					message: "Please provide a valid date for your event."
+				});
+				request.template.statusCode = errorResponse.statusCode;
+				request.template.statusText = errorResponse.statusText;
+
+				errorMessage = errorResponse.message;
 				exit;
 
 			}
@@ -69,7 +86,12 @@
 			} catch ( error ) {
 
 				application.logService.logException( error );
-				errorMessage = application.errorService.getResponseMessage( error );
+
+				errorResponse = application.errorService.getResponse( error );
+				request.template.statusCode = errorResponse.statusCode;
+				request.template.statusText = errorResponse.statusText;
+
+				errorMessage = errorResponse.message;
 				exit;
 
 			}
@@ -99,7 +121,12 @@
 		} catch ( any error ) {
 
 			application.logService.logException( error );
-			errorMessage = application.errorService.getResponseMessage( error );
+
+			errorResponse = application.errorService.getResponse( error );
+			request.template.statusCode = errorResponse.statusCode;
+			request.template.statusText = errorResponse.statusText;
+
+			errorMessage = errorResponse.message;
 
 		}
 

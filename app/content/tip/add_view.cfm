@@ -7,7 +7,7 @@
 		</h1>
 
 		<cfif errorMessage.len()>
-			<p>
+			<p style="background: red ; color: white ;">
 				<strong>#encodeForHtml( errorMessage )#</strong>
 			</p>
 		</cfif>
@@ -33,26 +33,6 @@
 						</option>
 					</cfloop>
 				</select>
-			</p>
-
-			<p style="margin-left: 30px ;">
-				Or, create a new Tippee:<br />
-				<input
-					type="text"
-					name="tippeeName"
-					value="#encodeForHtmlAttribute( request.context.tippeeName )#"
-					placeholder="Name..."
-					size="50"
-					maxlength="50"
-				/>
-				<input
-					type="text"
-					name="tippeeOccupation"
-					value="#encodeForHtmlAttribute( request.context.tippeeOccupation )#"
-					placeholder="Occupation (optional)..."
-					size="20"
-					maxlength="50"
-				/>
 			</p>
 
 			<p>

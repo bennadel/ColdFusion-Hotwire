@@ -4,6 +4,56 @@ component
 	{
 
 	/**
+	* I generate a 400 response object for the given error attributes.
+	*/
+	public struct function as400( struct errorAttributes = {} ) {
+
+		return( getGeneric400Response().append( errorAttributes ) );
+
+	}
+
+
+	/**
+	* I generate a 403 response object for the given error attributes.
+	*/
+	public struct function as403( struct errorAttributes = {} ) {
+
+		return( getGeneric403Response().append( errorAttributes ) );
+
+	}
+
+
+	/**
+	* I generate a 404 response object for the given error attributes.
+	*/
+	public struct function as404( struct errorAttributes = {} ) {
+
+		return( getGeneric404Response().append( errorAttributes ) );
+
+	}
+
+
+	/**
+	* I generate a 422 response object for the given error attributes.
+	*/
+	public struct function as422( struct errorAttributes = {} ) {
+
+		return( getGeneric422Response().append( errorAttributes ) );
+
+	}
+
+
+	/**
+	* I generate a 500 response object for the given error attributes.
+	*/
+	public struct function as500( struct errorAttributes = {} ) {
+
+		return( getGeneric500Response().append( errorAttributes ) );
+
+	}
+
+
+	/**
 	* I return a generic 400 Bad Request response.
 	*/
 	public struct function getGeneric400Response() {
@@ -223,59 +273,6 @@ component
 	public string function getResponseMessage( required any error ) {
 
 		return( getResponse( error ).message );
-
-	}
-
-	// ---
-	// PRIVATE METHODS.
-	// ---
-
-	/**
-	* I generate a 400 response object for the given error attributes.
-	*/
-	private struct function as400( struct errorAttributes = {} ) {
-
-		return( getGeneric400Response().append( errorAttributes ) );
-
-	}
-
-
-	/**
-	* I generate a 403 response object for the given error attributes.
-	*/
-	private struct function as403( struct errorAttributes = {} ) {
-
-		return( getGeneric403Response().append( errorAttributes ) );
-
-	}
-
-
-	/**
-	* I generate a 404 response object for the given error attributes.
-	*/
-	private struct function as404( struct errorAttributes = {} ) {
-
-		return( getGeneric404Response().append( errorAttributes ) );
-
-	}
-
-
-	/**
-	* I generate a 422 response object for the given error attributes.
-	*/
-	private struct function as422( struct errorAttributes = {} ) {
-
-		return( getGeneric422Response().append( errorAttributes ) );
-
-	}
-
-
-	/**
-	* I generate a 500 response object for the given error attributes.
-	*/
-	private struct function as500( struct errorAttributes = {} ) {
-
-		return( getGeneric500Response().append( errorAttributes ) );
 
 	}
 

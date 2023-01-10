@@ -14,6 +14,12 @@
 
 	if ( request.context.submitted ) {
 
+		// NOTE: In order for Turbo Drive to work with properly with FORM SUBMISSIONS, we
+		// must set an appropriate HTTP status code on the response. Turbo Drive expects a
+		// "Location" (redirect) header when a form is submitted successfully. As such, in
+		// order for our form to re-render on a failed submission, we must return a non-
+		// 200 status code.
+
 		try {
 
 			result = application.tippeeWorkflow.updateTippee(
