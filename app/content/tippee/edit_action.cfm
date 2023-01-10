@@ -37,7 +37,12 @@
 		} catch ( any error ) {
 
 			application.logService.logException( error );
-			errorMessage = application.errorService.getResponseMessage( error );
+
+			errorResponse = application.errorService.getResponse( error );
+			request.template.statusCode = errorResponse.statusCode;
+			request.template.statusText = errorResponse.statusText;
+
+			errorMessage = errorResponse.message;
 
 		}
 
